@@ -1,0 +1,19 @@
+{
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-decode-h264",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "deprecated": false,
+  "description": "This plugin decoding h.264 raw frame data. Plugin will using iOS platform.",
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "name": "cordova-plugin-decode-h264",
+  "version": "1.0.0"
+}

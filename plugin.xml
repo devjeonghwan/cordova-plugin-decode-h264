@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cordova-plugin-decode-h264"
+        version="1.0.0">
+
+  <name>DecodeH264Plugin</name>
+
+  <description>
+      This plugin decoding h.264 raw frame data.
+      Plugin will using iOS platform.
+  </description>
+
+  <author>devjeonghwan</author>
+
+  <license>MIT</license>
+
+  <engines>
+    <engine name="cordova" version=">=3.0.0"/>
+  </engines>
+
+  <js-module src="www/h264DecoderPlugin.js" name="h264DecoderPlugin">
+    <clobbers target="H264DecoderPlugin" />
+  </js-module>
+
+  <!-- ios -->
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+      <feature name="H264DecoderPlugin">
+        <param name="ios-package" value="H264DecoderPlugin"/>
+      </feature>
+    </config-file>
+
+    <header-file src="src/ios/VTCompressionH264Decode.h"/>
+    <source-file src="src/ios/VTCompressionH264Decode.m"/>
+    <source-file src="src/ios/H264DecoderPlugin.h"/>
+    <source-file src="src/ios/H264DecoderPlugin.m"/>
+  </platform>
+
+</plugin>
