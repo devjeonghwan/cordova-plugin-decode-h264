@@ -47,7 +47,7 @@
             self.sps = [naluData subdataWithRange:NSMakeRange(4, naluData.length - 4)];;
         }else if(nalu_type == 8){
             self.pps = [naluData subdataWithRange:NSMakeRange(4, naluData.length - 4)];;
-        }else if(nalu_type == 5){/
+        }else if(nalu_type == 5){
             uint32_t dataLength32 = htonl (naluData.length - 4);
             memcpy (frameBytes, &dataLength32, sizeof (uint32_t));
             [self decodeFrame:[NSData dataWithBytes:frameBytes length:naluData.length]];
